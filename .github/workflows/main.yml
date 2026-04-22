@@ -1,0 +1,19 @@
+name: Laravel_CICD
+on: ["push"]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the code
+              uses: actions/checkout@v6
+            - name: Setup PHP and disable opcache
+              uses: shivammathur/setup-php@v2
+              with:
+                php-version: '8.2'
+                extensions: :mbstring,tokenizer,openssl
+            - name: Generate application key
+              run: php artisan key:generate
+        
+            - name: List the application 
+              run: ls
+            
