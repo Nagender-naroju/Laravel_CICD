@@ -74,6 +74,9 @@ jobs:
 
             # Run migrations
             sudo -u www-data php artisan migrate --force
+            
+            # Optimize everything at once ✅
+            sudo -u www-data php artisan optimize
 
             # Cache for production
             sudo -u www-data php artisan config:cache
