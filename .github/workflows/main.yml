@@ -11,7 +11,7 @@ jobs:
               uses: shivammathur/setup-php@v2
               with:
                 php-version: '8.2'
-                extensions: :mbstring,tokenizer,openssl
+                extensions: :dom,json,libxml,xml,,xmlwriter,mbstring,tokenizer,openssl
 
             - name: Install dependencies
               run: composer install
