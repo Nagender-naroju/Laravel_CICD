@@ -13,15 +13,18 @@ jobs:
                 php-version: '8.2'
                 extensions: :mbstring,tokenizer,openssl
 
+ 
+            - name: Generate application key
+              run: php artisan key:generate    
+
             - name: Install dependencies
               run: composer install
 
-            - name: Generate application key
-              run: php artisan key:generate
+            
 
             - name: List the application 
               run: ls
-              
+
             - name:  Run test cases
               run: php artisan test
             
